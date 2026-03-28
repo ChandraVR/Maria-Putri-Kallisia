@@ -1,47 +1,46 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <body>
+<head>
+  <title>Mini Website Interaktif ❤️</title>
+</head>
+<body>
 
-        <h1 id="teks">Hai Kamu Yang Disana🫵</h1>
-        <button onclick="klikPertama(this)">Klik aku</button>
+  <h1 id="teks">Hai Kamu Yang Disana🫵</h1>
+  <button id="tombol1">Klik aku</button>
 
-        <div id="container"></div>
+  <div id="container"></div> <!-- Tempat tombol baru dan GIF -->
 
-       <script>
-           function klikPertama(tombol) {
-           // nambah teks
-              document.getElementById("teks").innerText += " I Love You!❤️";
+  <script>
+    // Tombol pertama
+    document.getElementById("tombol1").addEventListener("click", function() {
+      // Tambah tulisan
+      document.getElementById("teks").innerText += " I Love You!❤️";
+      // Hapus tombol lama
+      this.remove();
 
-           // hapus tombol lama
-              tombol.remove();
+      // Buat tombol baru
+      let tombolBaru = document.createElement("button");
+      tombolBaru.innerText = "Klik lagi 😳";
 
-           // buat tombol baru
-              let tombolBaru = document.createElement("button");
-              tombolBaru.innerText = "Klik lagi 😳";
+      // Saat tombol baru diklik
+      tombolBaru.addEventListener("click", function() {
+        document.getElementById("teks").innerText = "Aku serius loh ❤️";
 
-              tombolBaru.onclick = function() {
-              klikKedua(tombolBaru);
-              };
+        // Hapus tombol kedua
+        this.remove();
 
-              document.getElementById("container").appendChild(tombolBaru);
-              }
+        // Tambah GIF
+        let gambar = document.createElement("img");
+        gambar.src = "bubu-sad-dudu.gif"; // Ganti sesuai path GIF-mu
+        gambar.width = 200; // Atur lebar sesuai kebutuhan
 
-              function klikKedua(tombol) {
-              // ganti teks (bukan nambah)
-              document.getElementById("teks").innerText = "I Miss You ❤️";
+        document.getElementById("container").appendChild(gambar);
+      });
 
-              // hapus tombol
-              tombol.remove();
+      // Tambahkan tombol baru ke container
+      document.getElementById("container").appendChild(tombolBaru);
+    });
+  </script>
 
-              // tambah gambar
-              let gambar = document.createElement("img");
-              gambar.src = "bubu-sad-dudu.gif"; // cukup nama file
-              gambar.width = 200;
-
-              document.getElementById("container").appendChild(gambar);
-              }
-        </script>
-
-    </body>
-  </head>
+</body>
 </html>
