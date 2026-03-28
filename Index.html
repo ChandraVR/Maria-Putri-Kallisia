@@ -1,47 +1,47 @@
 <html>
-<head>
-<body>
+  <head>
+    <body>
 
-  <h1 id="teks">Hai Kamu Yang Disana🫵</h1>
-  <button onclick="klikPertama(this)">Klik aku</button>
+        <h1 id="teks">Hai Kamu Yang Disana🫵</h1>
+        <button onclick="klikPertama(this)">Klik aku</button>
 
-  <div id="container"></div>
+        <div id="container"></div>
 
-  <script>
-    function klikPertama(tombol) {
-      // nambah teks
-      document.getElementById("teks").innerText += " I Love You!❤️";
+       <script>
+           function klikPertama(tombol) {
+           // nambah teks
+              document.getElementById("teks").innerText += " I Love You!❤️";
 
-      // hapus tombol lama
-      tombol.remove();
+           // hapus tombol lama
+              tombol.remove();
 
-      // buat tombol baru
-      let tombolBaru = document.createElement("button");
-      tombolBaru.innerText = "Klik lagi 😳";
+           // buat tombol baru
+              let tombolBaru = document.createElement("button");
+              tombolBaru.innerText = "Klik lagi 😳";
 
-      tombolBaru.onclick = function() {
-        klikKedua(tombolBaru);
-      };
+              tombolBaru.onclick = function() {
+              klikKedua(tombolBaru);
+              };
 
-      document.getElementById("container").appendChild(tombolBaru);
-    }
+              document.getElementById("container").appendChild(tombolBaru);
+              }
 
-    function klikKedua(tombol) {
-      // ganti teks (bukan nambah)
-      document.getElementById("teks").innerText = "I Miss You ❤️";
+              function klikKedua(tombol) {
+              // ganti teks (bukan nambah)
+              document.getElementById("teks").innerText = "I Miss You ❤️";
 
-      // hapus tombol
-      tombol.remove();
+              // hapus tombol
+              tombol.remove();
 
-      // tambah gambar
-      let gambar = document.createElement("img");
-      gambar.src = "bubu-sad-dudu.gif"; // cukup nama file
-      gambar.width = 200;
+              // tambah gambar
+              let gambar = document.createElement("img");
+              gambar.src = "bubu-sad-dudu.gif"; // cukup nama file
+              gambar.width = 200;
 
-      document.getElementById("container").appendChild(gambar);
-    }
-  </script>
+              document.getElementById("container").appendChild(gambar);
+              }
+        </script>
 
-</body>
-</head>
+    </body>
+  </head>
 </html>
